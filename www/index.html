@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>LaTeX2Image</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <textarea class="form-control my-3" id="txtInput"></textarea>
+            </div>
+            <div class="col-12 col-lg-6">
+                <pre id="mathjax_result" class="my-3"></pre>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary btn-lg btn-block" id="btnSave">Save Image</button>
+        </div>
+        <div class="row">
+            <img id="holder">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                skipTags: ["script", "noscript", "style", "textarea"],
+                inlineMath: [["$", "$"], ["\\(", "\\)"]]
+            },
+            showMathMenu: false,
+            skipStartupTypeset: true,
+            showProcessingMessages: false
+        };
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/html2canvas.min.js"></script>
+    <script type="text/javascript" src="js/mathjax/MathJax.js?config=TeX-MML-AM_CHTML-full"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
