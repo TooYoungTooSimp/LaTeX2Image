@@ -40,7 +40,7 @@ document.addEventListener((isCordova = !(typeof (cordova) === "undefined")) ? "d
     document.getElementById("btnSave").addEventListener("click", () =>
         setTimeout(() => html2canvas(mathjax_result).then(isCordova
             ? canvas => window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, rootDirEntry =>
-                IO.Directory.Create(rootDirEntry, "LaT2X2Image", dirEntry =>
+                IO.Directory.Create(rootDirEntry, "LaTeX2Image", dirEntry =>
                     IO.File.Create(dirEntry, Date.now().toString() + ".png",
                         fileEntry => canvas.toBlob(blob => fileEntry.createWriter(fileWriter => {
                             fileWriter.onwriteend = () => (msg = "Image saved in {sdcard}/LaTeX2Image", window.plugins.toast.showShortBottom(msg), console.log(msg));
